@@ -31,6 +31,7 @@ def dirtreeGenerate(startpath : str, whitelist : list, ignorelist : list):
         List of folders and file extensions to ignore in the dirtree.
     """
     with open("dirtree.tex", "w") as open_file:
+        open_file.write("\chapter{Github References}\label{app:GitHubRef} \n") # start dirtree
         open_file.write("\dirtree{% \n") # start dirtree
         for dirpath, dirnames, filenames in os.walk(startpath):
             dirpath = dirpath.replace("\\", "/").replace("//", "/").replace("_", "\_")  # replace common errors with latex
